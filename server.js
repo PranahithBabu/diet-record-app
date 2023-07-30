@@ -10,13 +10,14 @@ const bcrypt = require('bcrypt');
 
 const app = express()
 app.use(express.json())
-app.use(cors({origin:'*'}))
+app.use(cors())
 
 mongoose.connect(process.env.MONGODB_URL).then(
     () => console.log('DB Connected')
 )
 
 app.get('/',(req,res)=>{
+    res.setHeader("Access-Control-Allow-Credentials","true")
     return res.send('Hello')
 })
 
