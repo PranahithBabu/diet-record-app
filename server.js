@@ -12,7 +12,7 @@ const app = express()
 app.use(express.json())
 app.use(cors({origin:'*'}))
 
-mongoose.connect('mongodb+srv://pranahith:pranahith@cluster0.jd7j7zy.mongodb.net/?retryWrites=true&w=majority').then(
+mongoose.connect(process.env.MONGODB_URL).then(
     () => console.log('DB Connected')
 )
 

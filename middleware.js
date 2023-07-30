@@ -6,7 +6,7 @@ module.exports = function(req, res, next) {
         if(!token) {
             return res.status(400).send('Token Not Found. Please Login')
         }
-        let decoded = jwt.verify(token,'jwtPassword')
+        let decoded = jwt.verify(token,process.env.decodedPassword)
         
         req.userdetails = decoded.userdetails
         // console.log("Decoded: ",decoded.userdetails.id)
