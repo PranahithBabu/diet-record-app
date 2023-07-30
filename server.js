@@ -71,7 +71,7 @@ app.post('/login', async (req,res) => {
     }
 })
 
-app.get('/allprofiles', middleware, async (req,res) => {
+app.get('/allprofiles', async (req,res) => {
     try {
         let profile = await user.find()
         return res.json(profile)
