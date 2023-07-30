@@ -23,7 +23,7 @@ const Dashboard = () => {
   const [recordData, setRecordData] = useState()
   const [screenSize, setScreenSize] = useState(false)
   useEffect(() => {
-    axios.get(`http://localhost:5000${currentURL}`,{
+    axios.get(`https://diet-record-app.onrender.com${currentURL}`,{
       headers: {
         'x-token': localStorage.getItem('token')
       }
@@ -68,7 +68,7 @@ const Dashboard = () => {
   const submitHandler = e => {
     e.preventDefault()
     console.log(item)
-    axios.post(`http://localhost:5000${currentURL}`, item, 
+    axios.post(`https://diet-record-app.onrender.com${currentURL}`, item, 
     {
       headers: {
         'x-token': localStorage.getItem('token'),
@@ -118,7 +118,7 @@ const Dashboard = () => {
     console.log("Formatted: ",iso8601Date)
 
 
-    axios.patch(`http://localhost:5000${currentURL}`,{date: iso8601Date}
+    axios.patch(`https://diet-record-app.onrender.com${currentURL}`,{date: iso8601Date}
     ,{
       headers: {
         'x-token': localStorage.getItem('token')
@@ -135,7 +135,7 @@ const Dashboard = () => {
     console.log("Current: ",currentDate)
     const selected = selectedDate.toLocaleDateString()
     console.log("Selected: ",selected)
-    axios.put(`http://localhost:5000${currentURL}`,{_id, date:selected, caloriecount:calorie, proteincount:protein}
+    axios.put(`https://diet-record-app.onrender.com${currentURL}`,{_id, date:selected, caloriecount:calorie, proteincount:protein}
     ,{
       headers: {
         'x-token': localStorage.getItem('token')
@@ -158,7 +158,7 @@ const Dashboard = () => {
   const deleteItemBtn = (_id) => {
     console.log(localStorage.getItem('token'))
     console.log(profileURL[2])
-    axios.delete(`http://localhost:5000${currentURL}`,{data:{_id: _id},
+    axios.delete(`https://diet-record-app.onrender.com${currentURL}`,{data:{_id: _id},
       headers: {
         'x-token': localStorage.getItem('token')}
     }
