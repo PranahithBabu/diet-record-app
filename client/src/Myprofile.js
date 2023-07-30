@@ -23,7 +23,7 @@ const Myprofile = () => {
     console.log(updateData)
     if(data.email!==updateData.email) {
       console.log("In if")
-      axios.put(`http://localhost:5000${currentURL}`, updateData, {
+      axios.put(`https://diet-record-app.onrender.com${currentURL}`, updateData, {
         headers: {
           'x-token': localStorage.getItem('token')
         }, 
@@ -45,7 +45,7 @@ const Myprofile = () => {
     }
   }
   useEffect(() => {
-    axios.get(`http://localhost:5000${currentURL}`,{
+    axios.get(`https://diet-record-app.onrender.com${currentURL}`,{
       headers: {
         'x-token': localStorage.getItem('token')
       }
@@ -65,7 +65,7 @@ const Myprofile = () => {
     return <Navigate to='/login' />
   }
   const deleteAccount = () => {
-    axios.delete(`http://localhost:5000${currentURL}`,{
+    axios.delete(`https://diet-record-app.onrender.com${currentURL}`,{
       headers: {
         'x-token': localStorage.getItem('token')
       }
