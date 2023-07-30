@@ -28,17 +28,11 @@ const Login = () => {
   }
   const submitHandler = e => {
     e.preventDefault()
-    // console.log(data)
-    axios.post('http://localhost:5000/login',data).then(
+    axios.post('https://diet-record-app.onrender.com/login',data).then(
       res => {localStorage.setItem('token',res.data.token);
       setAuth(true);
-      
-      // let token = localStorage.getItem('token')
-      // let decoded = jwt.verify(res.data.token,'jwtPassword');
-      // console.log(decoded)
-      // setUserId(decoded)
-
-      const name = jwt_decode(JSON.stringify(res.data.token)); // jwt_decode() requires the token to be converted into string first
+              
+      const name = jwt_decode(JSON.stringify(res.data.token));
       setUserId(name.userdetails.id)
     }
     ).catch(error=>{
