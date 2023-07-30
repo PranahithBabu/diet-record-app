@@ -7,7 +7,8 @@
     "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix client",
-    "both": "concurrently \"npm run server\" \"npm run client\" "
+    "both": "concurrently \"npm run server\" \"npm run client\" ",
+    "build": "npm i"
   },
   "author": "Pranahith Babu Yarra",
   "license": "ISC",
