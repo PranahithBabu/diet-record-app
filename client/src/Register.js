@@ -19,7 +19,7 @@ const Register = () => {
   const submitHandler = e => {
     e.preventDefault()
     console.log(data)
-    axios.post('http://localhost:5000/register',{
+    axios.post('https://diet-record-app.onrender.com/register',{
       name: data.name,
       email: data.email,
       password: data.password,
