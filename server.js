@@ -60,7 +60,7 @@ app.post('/login', async (req,res) => {
                 id: exist.id
             }
         }
-        jwt.sign(payload,process.env.decodedPassword,{expiresIn:360000000},
+        jwt.sign(payload,jwtPassword,{expiresIn:360000000},
         (err,token)=>{
             if(err) throw err
             return res.json({token})
