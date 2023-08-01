@@ -208,6 +208,7 @@ app.patch('/dashboard/:userId', middleware, async (req,res) => {
         allDate: allDate,
         specificDate: specificDate
     }
+    console.log("Specific Date: ",data.specificDate)
     return res.json(data)
 })
 
