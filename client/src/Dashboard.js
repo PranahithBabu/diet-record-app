@@ -53,10 +53,6 @@ const Dashboard = () => {
     }
   })
 
-  useEffect(()=>{
-    console.log("RD: ",recordData)
-  })
-
   if(!localStorage.getItem('token')) {
     return <Navigate to='/login' />
   }
@@ -129,6 +125,7 @@ const Dashboard = () => {
       }
     }
     ).then(res => {
+      console.log("In Patch")
       const {allDate, specificDate} = res.data
       setRecordData(specificDate)
     })
