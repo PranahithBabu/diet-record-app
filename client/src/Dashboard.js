@@ -53,6 +53,10 @@ const Dashboard = () => {
     }
   })
 
+  useEffect(()=>{
+    console.log("RD: ",recordData)
+  })
+
   if(!localStorage.getItem('token')) {
     return <Navigate to='/login' />
   }
