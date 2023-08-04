@@ -201,7 +201,9 @@ app.put('/dashboard/:userId', middleware, async (req, res) => {
 
 app.patch('/dashboard/:userId', middleware, async (req,res) => {
     const id = req.params.userId
+    console.log("Id: ",id)
     const dateInp = req.body.date
+    console.log("Date: ",dateInp)
     // const allDate = await record.find({userId: id})
     const specificDate = await record.findOne({userId: id, date: dateInp})
     // const data = {
