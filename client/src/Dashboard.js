@@ -113,7 +113,7 @@ const Dashboard = () => {
     const hours = String(inputDate.getUTCHours()).padStart(2, "0");
     const minutes = String(inputDate.getUTCMinutes()).padStart(2, "0");
     const seconds = String(inputDate.getUTCSeconds()).padStart(2, "0");
-
+    console.log("Hours: ",hours)
     const iso8601Date = `${year}-${month}-${day}T${hours}:${minutes}:${seconds}.000Z`;
     console.log("Formatted: ",iso8601Date)
 
