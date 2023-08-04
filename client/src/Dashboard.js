@@ -126,9 +126,8 @@ const Dashboard = () => {
     }
     ).then(res => {
       console.log("In Patch")
-      const {allDate, specificDate} = res.data
-      console.log("SD: ",specificDate)
-      setRecordData(specificDate)
+      console.log("SD: ",res.data)
+      setRecordData(res.data)
       console.log("RD: ",recordData)
     })
   }
