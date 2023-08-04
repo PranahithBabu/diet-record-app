@@ -202,14 +202,14 @@ app.put('/dashboard/:userId', middleware, async (req, res) => {
 app.patch('/dashboard/:userId', middleware, async (req,res) => {
     const id = req.params.userId
     const dateInp = req.body.date
-    const allDate = await record.find({userId: id})
+    // const allDate = await record.find({userId: id})
     const specificDate = await record.findOne({userId: id, date: dateInp})
-    const data = {
-        allDate: allDate,
-        specificDate: specificDate
-    }
-    console.log("Specific Date: ",data.allDate)
-    return res.json(data)
+    // const data = {
+    //     allDate: allDate,
+    //     specificDate: specificDate
+    // }
+    // console.log("Specific Date: ",data.allDate)
+    return res.json(specificDate)
 })
 
 app.listen(process.env.PORT, ()=>console.log('Server started...'))
