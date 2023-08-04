@@ -128,6 +128,7 @@ const Dashboard = () => {
       console.log("In Patch")
       const {allDate, specificDate} = res.data
       setRecordData(specificDate)
+      console.log("RD: ",recordData)
     })
   }
 
